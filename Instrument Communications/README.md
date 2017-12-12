@@ -1,4 +1,4 @@
 # Instrument Communication Samples
-Here are the various languages that we have samples for:
+Languages that we currently have samples for:
 
-- [C#](https://github.com/MarqMetrix/Samples/Instrument Communications/CS)
+- [C#](https://github.com/MarqMetrix/Samples/Instrument%20Communications/CS)
