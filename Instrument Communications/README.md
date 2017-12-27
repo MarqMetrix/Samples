@@ -35,7 +35,9 @@ If a value isn't supplied for either argument, default values are supplied.
 
 *The default port number is 8080. The default sample file is the SampleData.json included with the emulator.*
 
-Once running, the emulator will display the primary and secondary API keys. 
+Once running, the emulator will display the primary and secondary API keys.
+
+![Emulator Running](EmulatorSetup/EmulatorRunning.png)
 
 1. The primary/secondary key is used when calling from an SDK.
 2. The URL encoded variants are for calling directly from a browser.
