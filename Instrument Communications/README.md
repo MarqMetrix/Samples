@@ -19,7 +19,9 @@ Before unzipping, you will need to Unblock the file.
 
 Then you can unzip the package to a location of your choice.
 
-Make sure to run the emulator as Administrator. Either by right-clicking the executable, and selecting "Run as Administrator"; or by running the emulator from an Administrator elevated prompt, like Command Prompt or Powershell. 
+Make sure to run the emulator as Administrator. Either by right-clicking the executable, and selecting "Run as Administrator"; or by running the emulator from an Administrator elevated prompt, like Command Prompt or Powershell.
+
+The executable is `emulator.exe` 
 
 The emulator accepts the following arguments:
 
