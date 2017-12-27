@@ -13,7 +13,7 @@ Before unzipping, you will need to Unblock the file.
 1. Right-click the file, and click Properties.
 2. Check "Unblock".
 
-![Unblock](/EmulatorSetup/UnblockPackage.png)
+![Unblock](EmulatorSetup/UnblockPackage.png)
 
 3. Click "Ok".
 
