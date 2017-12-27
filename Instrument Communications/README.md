@@ -6,12 +6,15 @@ Languages that we currently have samples for:
 ### Development Emulators
 Currently our emulators are only available as .zip packages. They are packaged with the .NET Core runtime libraries. So there is no dependency on any .NET frameworks.
 
-####Instructions
+**Instructions**
 
 Before unzipping, you will need to Unblock the file.
 
 1. Right-click the file, and click Properties.
 2. Check "Unblock".
+
+![Unblock](/EmulatorSetup/UnblockPackage.png)
+
 3. Click "Ok".
 
 Make sure to run the emulator as Administrator. Either by right-clicking the executable, and selecting "Run as Administrator"; or by running the emulator from an Administrator elevated prompt, like Command Prompt or Powershell. 
@@ -33,11 +36,11 @@ Once running, the emulator will display the primary and secondary API keys.
 1. The primary/secondary key is used when calling from an SDK.
 2. The URL encoded variants are for calling directly from a browser.
 
-####Requirements:
+**Requirements:**
 
 - Windows 7 or later (x64/x86)
 
-####Versions:
+**Versions:**
 
 - [1.17.36106 Windows 64-bit](http://resources.marqmetrix.com/software/MarqMetrix-DevEmulator-1.17.36106-win-x64.zip)
 - [1.17.36106 Windows 32-bit (x86)](http://resources.marqmetrix.com/software/MarqMetrix-DevEmulator-1.17.36106-win-x86.zip)
