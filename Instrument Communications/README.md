@@ -31,7 +31,7 @@ The port number for the emulator to listen on.
 `-sample`
 The full path of the sample file to use during sample acquisition.
 
-'-darksample'
+`-darksample`
 The full path of the dark sample file to use during sample acquisition.
 
 If a value isn't supplied for either argument, default values are supplied.
