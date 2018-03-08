@@ -31,6 +31,9 @@ The port number for the emulator to listen on.
 `-sample`
 The full path of the sample file to use during sample acquisition.
 
+'-darksample'
+The full path of the dark sample file to use during sample acquisition.
+
 If a value isn't supplied for either argument, default values are supplied.
 
 *The default port number is 8080. The default sample file is the SampleData.json included with the emulator.*
@@ -48,5 +51,8 @@ Once running, the emulator will display the primary and secondary API keys.
 
 **Versions:**
 
-- [1.17.36106 Windows 64-bit](http://resources.marqmetrix.com/software/MarqMetrix-DevEmulator-1.17.36106-win-x64.zip)
-- [1.17.36106 Windows 32-bit (x86)](http://resources.marqmetrix.com/software/MarqMetrix-DevEmulator-1.17.36106-win-x86.zip)
+- [1.20.0.18065 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/MarqMetrix-DevEmulator-1.20.0.18065-01-win-x64.zip)
+- [1.20.0.18065 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/MarqMetrix-DevEmulator-1.20.0.18065-01-win-x86.zip)
+
+- [1.17.36106 Windows 64-bit DEPRECATED](http://resources.marqmetrix.com/software/MarqMetrix-DevEmulator-1.17.36106-win-x64.zip)
+- [1.17.36106 Windows 32-bit (x86) DEPRECATED](http://resources.marqmetrix.com/software/MarqMetrix-DevEmulator-1.17.36106-win-x86.zip)
