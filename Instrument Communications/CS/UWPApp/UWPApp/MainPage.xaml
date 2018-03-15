@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="UWPApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:op="using:OxyPlot.Windows"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Host" Margin="5" VerticalAlignment="Center" />
+            <TextBox x:Name="HostTextBox" Text="localhost" Margin="5" VerticalAlignment="Center" Width="100" />
+            <TextBlock Text="Port" Margin="5" VerticalAlignment="Center" />
+            <TextBox x:Name="PortTextBox" Text="8080" Margin="5" VerticalAlignment="Center" Width="80" />
+            <CheckBox x:Name="UseHttpsCheckBox" IsChecked="False" Margin="5" VerticalAlignment="Center" Content="HTTPS" />
+            <TextBlock Text="Api Key" Margin="5" VerticalAlignment="Center" />
+            <TextBox x:Name="ApiKeyTextBox" PlaceholderText="Enter your api key here" Margin="5" VerticalAlignment="Center" Width="200" />
+            <Button Content="Connect" Click="ConnectClick" Margin="5" VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="Integration Time" Margin="5" VerticalAlignment="Center" />
+            <TextBox x:Name="IntegrationTimeTextBox" Text="00:00:00.100" Margin="5" VerticalAlignment="Center" Width="120" />
+            <TextBlock Text="Average Samples" Margin="5" VerticalAlignment="Center" />
+            <TextBox x:Name="AverageSamplesText" Text="10" Margin="5" VerticalAlignment="Center" Width="60" />
+            <TextBlock Text="Average Samples" Margin="5" VerticalAlignment="Center" />
+            <ComboBox x:Name="LaserPowerComboBox" Margin="5" VerticalAlignment="Center">
+                <ComboBoxItem Content="100" />
+                <ComboBoxItem Content="200" />
+                <ComboBoxItem Content="300" IsSelected="True" />
+                <ComboBoxItem Content="400" />
+                <ComboBoxItem Content="450" />
+            </ComboBox>
+            <Button Content="Acquire" Click="AcquireClick" Margin="5" VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <CheckBox x:Name="DarkSubtractionCheckBox" Checked="DarkSubtractionCheckBox_Checked" Unchecked="DarkSubtractionCheckBox_Unchecked" Content="Dark Subtraction" Margin="5" />
+            <CheckBox x:Name="IntensityCorrectionCheckBox" Checked="IntensityCorrectionCheckBox_Checked" Unchecked="IntensityCorrectionCheckBox_Unchecked" Content="Intensity Correction" Margin="5" />
+
+            <RadioButton x:Name="RamanShiftRadioButton" Checked="RamanShiftRadioButton_Checked" Content="Raman Shift" Margin="5" IsChecked="True" />
+            <RadioButton x:Name="WavelengthRadioButton" Checked="WavelengthRadioButton_Checked" Content="Wavelength" Margin="5" />
+        </StackPanel>
+        <op:PlotView x:Name="PlotView" Grid.Row="3" />
+    </Grid>
+</Page>
