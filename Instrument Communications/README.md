@@ -51,8 +51,8 @@ Once running, the emulator will display the primary and secondary API keys.
 
 **Versions:**
 
-- [1.20.0.18073 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/MarqMetrix-DevEmulator-1.20.0.18073-01-win-x64.zip)
-- [1.20.0.18073 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/MarqMetrix-DevEmulator-1.20.0.18073-01-win-x86.zip)
+- [1.20.0.18075 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/MarqMetrix-DevEmulator-1.20.0.18075-01-win-x64.zip)
+- [1.20.0.18075 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/MarqMetrix-DevEmulator-1.20.0.18075-01-win-x86.zip)
 
 - [1.17.36106 Windows 64-bit DEPRECATED](http://resources.marqmetrix.com/software/MarqMetrix-DevEmulator-1.17.36106-win-x64.zip)
 - [1.17.36106 Windows 32-bit (x86) DEPRECATED](http://resources.marqmetrix.com/software/MarqMetrix-DevEmulator-1.17.36106-win-x86.zip)
