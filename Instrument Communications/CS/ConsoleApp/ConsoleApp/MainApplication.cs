@@ -15,8 +15,8 @@ namespace ConsoleApp
 
         public static async Task MainAsync()
         {
-            string host = "192.168.90.105";
-            int port = 80;
+            string host = "localhost";
+            int port = 8080;
             bool useHttps = false;
             string apiKey;
             // Request a shortcode to be generated, then get the primary API key using the shortcode.
@@ -32,7 +32,7 @@ namespace ConsoleApp
                 {
                     UseHttps = false,
                     HostName = host,
-                    Port = 80,
+                    Port = port,
                     ApiKey = apiKey
                 }))
             {
@@ -65,7 +65,7 @@ namespace ConsoleApp
                 ISampleInfo darkSampleInfo = await clientContext.AcquireSampleAsync(instrumentId, darkSampleOptions);
 
                 // Retrieve the sample data.
-                ISampleSet darkSampleSet = await clientContext.GetSampleAsync(instrumentId, darkSampleInfo.Id);
+                ISample darkSample = await clientContext.GetSampleAsync(instrumentId, darkSampleInfo.Id);
 
 
 
@@ -81,7 +81,7 @@ namespace ConsoleApp
                 ISampleInfo sampleInfo = await clientContext.AcquireSampleAsync(instrumentId, options);
 
                 // Retrieve the sample data.
-                ISampleSet sampleSet = await clientContext.GetSampleAsync(instrumentId, sampleInfo.Id);
+                ISample sample = await clientContext.GetSampleAsync(instrumentId, sampleInfo.Id);
 
                 Console.WriteLine($"Acquired Sample. [{sampleInfo.Id}]");
 

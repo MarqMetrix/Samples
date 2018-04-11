@@ -9,7 +9,7 @@
   <Import Project="..\ConsoleApp\ConsoleApp.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="MarqMetrix.Communications.Client.Direct" Version="1.20.0-alpha-18065-01" />
+    <PackageReference Include="MarqMetrix.Communications.Client.Direct" Version="1.20.0-alpha-18101-01" />
   </ItemGroup>
 
 </Project>

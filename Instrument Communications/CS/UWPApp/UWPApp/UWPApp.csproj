@@ -128,7 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MarqMetrix.Communications.Client.Direct">
-      <Version>1.20.0-alpha-18073-02</Version>
+      <Version>1.20.0-alpha-18101-01</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.8</Version>

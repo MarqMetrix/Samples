@@ -38,29 +38,35 @@
     <Reference Include="MarqMetrix.Communications.Client.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MarqMetrix.Communications.Client.Abstractions.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Client.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Client.Direct, Version=1.20.0.18065, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Client.Direct.1.20.0-alpha-18065-01\lib\netstandard2.0\MarqMetrix.Communications.Client.Direct.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Client.Direct, Version=1.20.0.18101, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Client.Direct.1.20.0-alpha-18101-01\lib\netstandard2.0\MarqMetrix.Communications.Client.Direct.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Client.Direct.Abstractions, Version=1.20.0.18065, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Client.Direct.Abstractions.1.20.0-alpha-18065-01\lib\netstandard2.0\MarqMetrix.Communications.Client.Direct.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Client.Direct.Abstractions, Version=1.20.0.18101, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Client.Direct.Abstractions.1.20.0-alpha-18101-01\lib\netstandard2.0\MarqMetrix.Communications.Client.Direct.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Common, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Common.1.20.0-alpha-18050-02\lib\netstandard2.0\MarqMetrix.Communications.Common.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Client.Extensions, Version=1.20.0.18081, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Client.Extensions.1.20.0-alpha-18081-01\lib\netstandard2.0\MarqMetrix.Communications.Client.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Common.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Common.Abstractions.1.20.0-alpha-18050-02\lib\netstandard2.0\MarqMetrix.Communications.Common.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Client.Extensions.Abstractions, Version=1.20.0.18081, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Client.Extensions.Abstractions.1.20.0-alpha-18081-01\lib\netstandard2.0\MarqMetrix.Communications.Client.Extensions.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Instruments, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Instruments.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Instruments.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Common, Version=1.20.0.18080, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Common.1.20.0-alpha-18080-01\lib\netstandard2.0\MarqMetrix.Communications.Common.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Instruments.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Instruments.Abstractions.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Instruments.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Common.Abstractions, Version=1.20.0.18080, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Common.Abstractions.1.20.0-alpha-18080-01\lib\netstandard2.0\MarqMetrix.Communications.Common.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Instruments.Client, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Instruments.Client.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Instruments.Client.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Instruments, Version=1.20.0.18081, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Instruments.1.20.0-alpha-18081-01\lib\netstandard2.0\MarqMetrix.Communications.Instruments.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Instruments.Client.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Instruments.Client.Abstractions.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Instruments.Client.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Instruments.Abstractions, Version=1.20.0.18081, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Instruments.Abstractions.1.20.0-alpha-18081-01\lib\netstandard2.0\MarqMetrix.Communications.Instruments.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MarqMetrix.Communications.Instruments.Client, Version=1.20.0.18081, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Instruments.Client.1.20.0-alpha-18081-01\lib\netstandard2.0\MarqMetrix.Communications.Instruments.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="MarqMetrix.Communications.Instruments.Client.Abstractions, Version=1.20.0.18081, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Instruments.Client.Abstractions.1.20.0-alpha-18081-01\lib\netstandard2.0\MarqMetrix.Communications.Instruments.Client.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="MarqMetrix.Communications.Notifications, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MarqMetrix.Communications.Notifications.1.20.0-alpha-18050-03\lib\netstandard2.0\MarqMetrix.Communications.Notifications.dll</HintPath>
@@ -74,17 +80,17 @@
     <Reference Include="MarqMetrix.Communications.Notifications.Client.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MarqMetrix.Communications.Notifications.Client.Abstractions.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Notifications.Client.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Samples, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Samples.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Samples.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Samples, Version=1.20.0.18080, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Samples.1.20.0-alpha-18080-02\lib\netstandard2.0\MarqMetrix.Communications.Samples.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Samples.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Samples.Abstractions.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Samples.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Samples.Abstractions, Version=1.20.0.18080, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Samples.Abstractions.1.20.0-alpha-18080-02\lib\netstandard2.0\MarqMetrix.Communications.Samples.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Samples.Client, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Samples.Client.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Samples.Client.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Samples.Client, Version=1.20.0.18081, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Samples.Client.1.20.0-alpha-18081-01\lib\netstandard2.0\MarqMetrix.Communications.Samples.Client.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Communications.Samples.Client.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Communications.Samples.Client.Abstractions.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Samples.Client.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Communications.Samples.Client.Abstractions, Version=1.20.0.18081, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Communications.Samples.Client.Abstractions.1.20.0-alpha-18081-01\lib\netstandard2.0\MarqMetrix.Communications.Samples.Client.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="MarqMetrix.Communications.Security, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MarqMetrix.Communications.Security.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Communications.Security.dll</HintPath>
@@ -104,26 +110,29 @@
     <Reference Include="MarqMetrix.Data.Json, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MarqMetrix.Data.Json.1.20.0-alpha-18050-02\lib\netstandard2.0\MarqMetrix.Data.Json.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Data.Samples, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Data.Samples.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Data.Samples.dll</HintPath>
+    <Reference Include="MarqMetrix.Data.Samples, Version=1.20.0.18078, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Data.Samples.1.20.0-alpha-18078-02\lib\netstandard2.0\MarqMetrix.Data.Samples.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Data.Samples.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Data.Samples.Abstractions.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Data.Samples.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Data.Samples.Abstractions, Version=1.20.0.18078, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Data.Samples.Abstractions.1.20.0-alpha-18078-02\lib\netstandard2.0\MarqMetrix.Data.Samples.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Data.Samples.Conversion.Json, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Data.Samples.Conversion.Json.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Data.Samples.Conversion.Json.dll</HintPath>
+    <Reference Include="MarqMetrix.Data.Samples.Conversion.Json, Version=1.20.0.18078, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Data.Samples.Conversion.Json.1.20.0-alpha-18078-02\lib\netstandard2.0\MarqMetrix.Data.Samples.Conversion.Json.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Data.Translation.Samples, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Data.Translation.Samples.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Data.Translation.Samples.dll</HintPath>
+    <Reference Include="MarqMetrix.Data.Translation.Samples, Version=1.20.0.18080, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Data.Translation.Samples.1.20.0-alpha-18080-01\lib\netstandard2.0\MarqMetrix.Data.Translation.Samples.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Data.Translation.Samples.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Data.Translation.Samples.Abstractions.1.20.0-alpha-18050-01\lib\netstandard2.0\MarqMetrix.Data.Translation.Samples.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Data.Translation.Samples.Abstractions, Version=1.20.0.18080, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Data.Translation.Samples.Abstractions.1.20.0-alpha-18080-01\lib\netstandard2.0\MarqMetrix.Data.Translation.Samples.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Data.Translation.Samples.Json, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Data.Translation.Samples.Json.1.20.0-alpha-18050-02\lib\netstandard2.0\MarqMetrix.Data.Translation.Samples.Json.dll</HintPath>
+    <Reference Include="MarqMetrix.Data.Translation.Samples.Json, Version=1.20.0.18080, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Data.Translation.Samples.Json.1.20.0-alpha-18080-01\lib\netstandard2.0\MarqMetrix.Data.Translation.Samples.Json.dll</HintPath>
     </Reference>
-    <Reference Include="MarqMetrix.Data.Translation.Samples.Json.Abstractions, Version=1.20.0.18050, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MarqMetrix.Data.Translation.Samples.Json.Abstractions.1.20.0-alpha-18050-02\lib\netstandard2.0\MarqMetrix.Data.Translation.Samples.Json.Abstractions.dll</HintPath>
+    <Reference Include="MarqMetrix.Data.Translation.Samples.Json.Abstractions, Version=1.20.0.18080, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Data.Translation.Samples.Json.Abstractions.1.20.0-alpha-18080-01\lib\netstandard2.0\MarqMetrix.Data.Translation.Samples.Json.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MarqMetrix.Math.Raman, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarqMetrix.Math.Raman.1.20.0-alpha-18072-01\lib\netstandard2.0\MarqMetrix.Math.Raman.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.1.0-preview1-final\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
@@ -132,7 +141,7 @@
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.0-preview1-final\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
