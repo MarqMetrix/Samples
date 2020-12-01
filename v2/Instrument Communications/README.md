@@ -1,7 +1,7 @@
 # Instrument Communication Samples
 Languages that we currently have samples for:
 
-- [C#](C#)
+- [C#](C%23)
 
 ### Development Emulator
 Our emulator is available as a single executable.
@@ -12,8 +12,8 @@ Our emulator is available as a single executable.
 
 **Versions:**
 
-- [2.0.0.20336 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.0.20336-08/win-x64/emulator.exe)
-- [2.0.0.20336 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.0.20336-08/win-x86/emulator.exe)
+- [2.0.0.20336 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.0.20336-09/win-x64/emulator.exe)
+- [2.0.0.20336 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.0.20336-09/win-x64/emulator.exe)
 
 
 **Instructions**
