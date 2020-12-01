@@ -1,0 +1,1911 @@
+{
+	"info": {
+		"_postman_id": "1a74d633-204d-25fe-05ad-853cc0119501",
+		"name": "MqMx Instruments Web Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Connectivity",
+			"item": [
+				{
+					"name": "Generate Short Code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f62bfaa1-8a87-4f96-b4db-ebdf00375106",
+								"exec": [
+									"pm.environment.set(\"ShortCodeGenerationId\", pm.response.json().generationId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://localhost:8796",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:8796/",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/GenerateShortCode",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Security",
+								"GenerateShortCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Primary Api Key from Short Code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5161da8a-b729-4f87-86df-8e4884c8065b",
+								"exec": [
+									"pm.environment.set(\"PrimaryApiKey\", pm.response.json().key);",
+									"",
+									"pm.environment.unset(\"ShortCodeGenerationId\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"Primary\",\n\t\"generationId\": \"{{ShortCodeGenerationId}}\",\n\t\"shortCode\": \"451248379\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Security",
+								"AccessKey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Secondary Api Key from Short Code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5161da8a-b729-4f87-86df-8e4884c8065b",
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.set(\"PrimaryApiKey\", pm.response.json().key);",
+									"",
+									"pm.environment.unset(\"ShortCodeGenerationId\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"Secondary\",\n\t\"generationId\": \"{{ShortCodeGenerationId}}\",\n\t\"shortCode\": \"467051395\"\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Security",
+								"AccessKey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Primary Api Key",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"Primary\"\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Security",
+								"AccessKey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Secondary Api Key",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"Secondary\"\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Security",
+								"AccessKey"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Instruments",
+			"item": [
+				{
+					"name": "List Instruments",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
+								"type": "text/javascript",
+								"exec": [
+									"var collectionResult = pm.response.json();",
+									"",
+									"pm.test(\"Has instrument\", function() {",
+									"   return collectionResult.items.length >= 1; ",
+									"});",
+									"",
+									"var instrument = collectionResult.items[0];",
+									"",
+									"pm.environment.set(\"InstrumentId\", instrument.id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Instrument",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Laser Enabled",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"isLaserEnabled\": true\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Display Name",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"displayName\": \"JeffTest01\"\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Laser Disabled",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"isLaserEnabled\": false\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Continuous Acquisition",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"integrationTime\": \"00:00:00.100\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"autoDark\": false,\n\t\"delay\": \"00:00:00.000\",\n\t\"metadata\": {\n\t\t\"test\": \"For Jeff\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/StartContinuousAcquisition",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"StartContinuousAcquisition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop Continuous Acquisition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/StopContinuousAcquisition",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"StopContinuousAcquisition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Instrument Calibrations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5083c87b-3e33-4c5f-ba4c-6dd123e7384d",
+								"type": "text/javascript",
+								"exec": [
+									"var items = pm.response.json().items;",
+									"",
+									"if (items.length > 0) {",
+									"    pm.environment.set(\"InstrumentCalibrationId\", items[0].id);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Calibration",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Calibration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Instrument Calibration",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b7bac383-80c1-44a5-b55e-4c7bca79ef16",
+								"type": "text/javascript",
+								"exec": [
+									"var intensityCorrectionData = [];",
+									"for (var i = 0; i < 2048; i++) {",
+									"    intensityCorrectionData[i] = 1;",
+									"}",
+									"",
+									"pm.environment.set(\"IntensityCorrectionData\", JSON.stringify(intensityCorrectionData));"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "adc60333-5c9b-4aca-b196-bf85f91f7523",
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.unset(\"IntensityCorrectionData\");",
+									"",
+									"var item = pm.response.json();",
+									"",
+									"pm.environment.set(\"InstrumentCalibrationId\", item.id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"createdBy\": \"Test Environment\",\n\t\"instrumentCalibration\": {\n\t\t\"laserWavelength\": 785.1547,\n\t\t\"arguments\": [7.874371e+02, 1.414304e-01, 1.095978e-05, -1.067649e-08, 1.853184e-12, -2.023975e-16],\n\t\t\"intensityCorrection\": {{IntensityCorrectionData}}\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Calibration/Data",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Calibration",
+								"Data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Instrument Calibration",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Calibration/{{InstrumentCalibrationId}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Calibration",
+								"{{InstrumentCalibrationId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Instrument Calibration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4d8fff86-ab34-4b0b-b2ae-cfde2c374ad4",
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.unset(\"InstrumentCalibrationId\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Calibration/{{InstrumentCalibrationId}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Calibration",
+								"{{InstrumentCalibrationId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Samples",
+			"item": [
+				{
+					"name": "List Samples",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5f707b7b-4d92-49d0-8e77-1e074a6c8ca3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f65811a3-e4a5-472a-bbad-cba1f393ee47",
+								"exec": [
+									"var collectionResult = pm.response.json();",
+									"",
+									"var logStr = \"Sample Ids: \"; ",
+									"var sampleIds = \"\";",
+									"var sampleId;",
+									"for (var i = 0; i < collectionResult.items.length; i++) {",
+									"    if (i > 0) {",
+									"        sampleIds += \", \";",
+									"    }",
+									"    logStr += collectionResult.items[i].id;",
+									"    sampleId = sampleId || collectionResult.items[i].id;",
+									"}",
+									"pm.environment.set(\"SampleId\", sampleId);",
+									"pm.environment.set(\"SamplesContinuationToken\", collectionResult.continuation);",
+									"console.log(logStr);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Samples?maximumResults=100",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Samples"
+							],
+							"query": [
+								{
+									"key": "maximumResults",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Samples Continued",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5f707b7b-4d92-49d0-8e77-1e074a6c8ca3",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "d7063468-be39-462f-b013-344148fb0a6d",
+								"type": "text/javascript",
+								"exec": [
+									"var collectionResult = pm.response.json();",
+									"",
+									"var logStr = \"Sample Ids: \"; ",
+									"var sampleIds = \"\";",
+									"var sampleId;",
+									"for (var i = 0; i < collectionResult.items.length; i++) {",
+									"    if (i > 0) {",
+									"        sampleIds += \", \";",
+									"    }",
+									"    logStr += collectionResult.items[i].id;",
+									"    sampleId = sampleId || collectionResult.items[i].id;",
+									"}",
+									"pm.environment.set(\"SampleId\", sampleId);",
+									"pm.environment.set(\"SamplesContinuation\", collectionResult.continuation);",
+									"console.log(\"Retrieved \" + collectionResult.items.length + \" samples\");",
+									"console.log(logStr);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Samples?continuation={{SamplesContinuationToken}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Samples"
+							],
+							"query": [
+								{
+									"key": "continuation",
+									"value": "{{SamplesContinuationToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Samples Filtered",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"darkSamples\": \"ExcludeDarkSamples\",\n\t\"maximumResults\": 10,\n\t\"validStatuses\": [\n\t\t\"Completed\"\n\t\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Samples",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Samples"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Last Dark Sample",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"darkSamples\": \"ExcludeLightSamples\",\n\t\"maximumResults\": 1,\n\t\"minimumIntegrationTime\": \"00:00:00.100\",\n\t\"maximumIntegrationTime\": \"00:00:00.100\",\n\t\"minimumSampleAverageCount\": 1,\n\t\"maximumSampleAverageCount\": 1,\n\t\"validStatuses\": [\n\t\t\"Completed\"\n\t\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Samples",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Samples"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Acquire Sample",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4bcc13b0-eb07-4d0d-8e3b-19529b8a0a02",
+								"exec": [
+									"pm.environment.set(\"SampleId\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"integrationTime\": \"00:00:00.1000\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"DeviceControlServices-Reference\",\n\t\t\"SampleName\": \"Water\",\n\t\t\"MetadataItem\": \"TestForJim\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/AcquireSample",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"AcquireSample"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Acquire Samples",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2bc3c524-1e80-4b0d-80df-0894a3d0a7a7",
+								"exec": [
+									"pm.environment.set(\"SampleId\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"items\": [\n\t\t{\n\t\t\t\"integrationTime\": \"00:00:00.1000\",\n\t\t\t\"sampleAverageCount\": 1,\n\t\t\t\"laserPower\": 300,\n\t\t\t\"failureRetryCount\": 4,\n\t\t\t\"metadata\": {\n\t\t\t\t\"ExperimentName\": \"DeviceControlServices-Reference\",\n\t\t\t\t\"SampleName\": \"Water\",\n\t\t\t\t\"MetadataItem\": \"TestForJim\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"integrationTime\": \"00:00:00.1000\",\n\t\t\t\"sampleAverageCount\": 1,\n\t\t\t\"laserPower\": 300,\n\t\t\t\"failureRetryCount\": 4,\n\t\t\t\"metadata\": {\n\t\t\t\t\"ExperimentName\": \"DeviceControlServices-Reference\",\n\t\t\t\t\"SampleName\": \"Water\",\n\t\t\t\t\"MetadataItem\": \"TestForJim\"\n\t\t\t}\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/AcquireSamples",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"AcquireSamples"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample Acquisition Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Samples/{{SampleId}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Samples",
+								"{{SampleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Sample Acquisition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Samples/{{SampleId}}/Cancel",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Samples",
+								"{{SampleId}}",
+								"Cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sample",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Samples/{{SampleId}}/Data",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Samples",
+								"{{SampleId}}",
+								"Data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Samples",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5f707b7b-4d92-49d0-8e77-1e074a6c8ca3",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ace613f9-1436-4f9b-b396-355d35bb7a76",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Samples",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Samples"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Networking",
+			"item": [
+				{
+					"name": "List Network Locations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2751b4af-8628-48d5-b217-7e72dd54a0d8",
+								"exec": [
+									"var collectionResult = pm.response.json();",
+									"",
+									"pm.test(\"Has network location\", function() {",
+									"   return collectionResult.value.length >= 1; ",
+									"});",
+									"",
+									"if (collectionResult.value.length > 0) {",
+									"    var networkLocation = collectionResult.value[0];",
+									"    ",
+									"    pm.environment.set(\"NetworkLocationId\", networkLocation.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fd739133-cb9c-4a3e-b47a-8d63b4880a6d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"NetworkLocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Network Location",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6eac5598-cd4d-497a-8c34-c5435ad996f1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6e15753c-9189-4e50-92b8-f68adf433091",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"path\": \"\\\\\\\\192.168.50.105\\\\TestShare\",\r\n  \"credentials\": {\r\n    \"username\": \"TestUser\",\r\n    \"password\": \"password\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"NetworkLocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Network Location",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32db8537-4352-4876-bbe4-ee120a72267d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e71159c6-dad8-412e-832e-aadb54794657",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/{{NetworkLocationId}}",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"NetworkLocations",
+								"{{NetworkLocationId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Network Location Connectivity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "56b30af9-1530-4c4d-9ccb-df490e2da314",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c93c0785-2f2d-420a-9fbc-23d5f96b5ec3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/{{NetworkLocationId}}/RefreshConnectivity",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"NetworkLocations",
+								"{{NetworkLocationId}}",
+								"RefreshConnectivity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Default Network Export Settings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/DefaultExportSettings",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"NetworkLocations",
+								"DefaultExportSettings"
+							]
+						},
+						"description": "List all Netshares"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Default Network Export Settings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/DeleteDefaultExportSettings",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"NetworkLocations",
+								"DeleteDefaultExportSettings"
+							]
+						},
+						"description": "List all Netshares"
+					},
+					"response": []
+				},
+				{
+					"name": "Set Default Network Export Settings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"outputAxisAlignment\": \"RamanShift\",\r\n    \"outputProcessingType\": \"Raw\",\r\n    \"outputFileFormat\": \"SPC\",\r\n    \"filenameScheme\": \"{MachineName}\\\\\\r\\n{ExperimentName}\\\\\\r\\n{SampleId}{FileExtension}\",\r\n    \"networkLocationId\": \"b56cfd37-5e68-447d-80b4-94b2ab361369\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/SetDefaultExportSettings",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"NetworkLocations",
+								"SetDefaultExportSettings"
+							]
+						},
+						"description": "List all Netshares"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Logging",
+			"item": [
+				{
+					"name": "Get Logging Configuration",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/Logs/GetConfiguration",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"Logs",
+								"GetConfiguration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Logging Configuration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"logLevel\": \"Warning\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/Logs/SetConfiguration",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"Logs",
+								"SetConfiguration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Log",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/odata/Logs?$orderBy=timestamp DESC",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"odata",
+								"Logs"
+							],
+							"query": [
+								{
+									"key": "$orderBy",
+									"value": "timestamp DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "OData",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "OData Api Metadata",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "953cacd1-d184-4fc7-80ed-750efce25a0b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9a931f19-2f3b-4613-a0b5-cf7beb244f5c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Date",
+						"value": "{{RequestDate}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "SharedKey {{AuthenticationToken}}"
+					}
+				],
+				"url": {
+					"raw": "http://{{HostName}}:{{PortNumber}}/odata/$metadata",
+					"protocol": "http",
+					"host": [
+						"{{HostName}}"
+					],
+					"port": "{{PortNumber}}",
+					"path": [
+						"odata",
+						"$metadata"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a0024a4c-6092-46d5-94f8-4d403891687a",
+				"type": "text/javascript",
+				"exec": [
+					"",
+					"var CryptoJS = require(\"crypto-js\");",
+					"",
+					"var date = new Date();",
+					"var primaryApiKey = pm.environment.get(\"PrimaryApiKey\");",
+					"",
+					"if (primaryApiKey) {",
+					"    var contentType = null;",
+					"    var members = pm.request.headers.members;",
+					"    for (var i = 0; i < members.length; i++) {",
+					"        var header = members[i];",
+					"        switch (header.key.toLowerCase())",
+					"        {",
+					"            case \"content-type\":",
+					"                contentType = header.value;",
+					"                break;",
+					"        }",
+					"    }",
+					"    pm.environment.set(\"RequestDate\", date.toUTCString());",
+					"    ",
+					"    var path = pm.request.url.path.join(\"/\");",
+					"    var variableRegex = new RegExp(\"\\\\{\\\\{[^\\\\}]+\\\\}\\\\}\");",
+					"    ",
+					"    var pathMatches = variableRegex.exec(path);",
+					"    while (pathMatches && pathMatches.length > 0)",
+					"    {",
+					"        var pathMatch = pathMatches[0];",
+					"        var matchIndex = path.indexOf(pathMatch);",
+					"        var argument = pathMatch.substring(2, pathMatch.length - 2);",
+					"            ",
+					"        var argumentValue = pm.variables.get(argument);",
+					"            ",
+					"        path = path.substring(0, matchIndex) + argumentValue + path.substring(matchIndex + pathMatch.length);",
+					"        ",
+					"        pathMatches = variableRegex.exec(path);",
+					"    }",
+					"    ",
+					"    var stringToHash = [",
+					"        pm.request.method,",
+					"        path,",
+					"        contentType,",
+					"        date.toUTCString()].join(\"\\n\");",
+					"        ",
+					"    console.log(\"Authorization String: \" + stringToHash);",
+					"    ",
+					"    var hash = CryptoJS.HmacSHA256(CryptoJS.enc.Utf8.parse(stringToHash), CryptoJS.enc.Base64.parse(primaryApiKey));",
+					"    ",
+					"    pm.environment.set(\"AuthenticationToken\", CryptoJS.enc.Base64.stringify(hash));",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "33b75b21-2ccc-4daf-94a5-7dfd7d3f237d",
+				"type": "text/javascript",
+				"exec": [
+					"pm.environment.unset(\"RequestDate\");",
+					"pm.environment.unset(\"AuthenticationToken\");"
+				]
+			}
+		}
+	]
+}
