@@ -11,42 +11,36 @@ namespace ConsoleApp
 
         public static void WriteSpcStreamData(Stream stream, double[] samplesDataX, double[] samplesDataY, DateTime sampleTakenDate, string logData, string spcHeaderText = "MarqMetrix", bool unevenlySpaced = true, bool isProcessed = true, bool multifile = false)
         {
-            var dataWriter = new BinaryWriter(stream);
+            using var dataWriter = new BinaryWriter(stream, Encoding.UTF8, true);
+            
+            if (unevenlySpaced) // storage format uneven is mostly used for Raman shift, even for raw spectra
             {
-                if (unevenlySpaced) // storage format uneven is mostly used for Raman shift, even for raw spectra
-                {
-                    var min = samplesDataX.Min();
-                    var max = samplesDataX.Max();
-                    WriteSpcHeader(dataWriter, min, max, samplesDataX.Length, sampleTakenDate, spcHeaderText);
-                }
-                else
-                    WriteSpcHeader(dataWriter, 0, samplesDataY.Length - 1, samplesDataX.Length, sampleTakenDate, spcHeaderText);
-
-                // if unevenly spaced - write the x values
-                if (unevenlySpaced) // write x data for raman shift
-                    WriteXdata(dataWriter, samplesDataX);
-
-                WriteSubHeader(dataWriter, unevenlySpaced);
-
-                // write subfile Y data if unevenly spaced or data if evenly spaced
-                WriteYdata(dataWriter, samplesDataY);
-
-                // write the log data
-                if (logData.Length > 0)
-                {
-                    WriteLogDataBlock(dataWriter, logData.Length);
-                    WriteLogData(dataWriter, logData);
-                }
-
-                // write flush data
-                dataWriter.Flush();
-
-#if LEGACY_WINDOWS
-
-#else
-                dataWriter.Close();
-#endif
+                var min = samplesDataX.Min();
+                var max = samplesDataX.Max();
+                WriteSpcHeader(dataWriter, min, max, samplesDataX.Length, sampleTakenDate, spcHeaderText);
             }
+            else
+                WriteSpcHeader(dataWriter, 0, samplesDataY.Length - 1, samplesDataX.Length, sampleTakenDate, spcHeaderText);
+
+            // if unevenly spaced - write the x values
+            if (unevenlySpaced) // write x data for raman shift
+                WriteXdata(dataWriter, samplesDataX);
+
+            WriteSubHeader(dataWriter, unevenlySpaced);
+
+            // write subfile Y data if unevenly spaced or data if evenly spaced
+            WriteYdata(dataWriter, samplesDataY);
+
+            // write the log data
+            if (logData.Length > 0)
+            {
+                WriteLogDataBlock(dataWriter, logData.Length);
+                dataWriter.Write(logData);
+            }
+
+            // write flush data
+            dataWriter.Flush();
+            dataWriter.Close();
         }
 
         private static void WriteSpcHeader(BinaryWriter dataWriter, double firstRamanShift, double lastRamanShift, int spectralPoints, DateTime fdate, string description, bool unevenlySpaced = true)
@@ -145,10 +139,6 @@ namespace ConsoleApp
             dataWriter.Write((uint)0);          // logdsk fixed
             dataWriter.Write(new char[42]);     // logspar
         }
-        private static void WriteLogData(BinaryWriter dataWriter, string logDataBlockDataGoesHere)
-        {
-            dataWriter.Write(logDataBlockDataGoesHere);
-        }
 
         private static uint ConvertDateTime(DateTime dateTimeNow)
         {
@@ -166,9 +156,6 @@ namespace ConsoleApp
 
             return dateTimeSpc;
         }
-
-        private static (double Min, double Max) GetMinMaxSpectrum(double[] samplesData)
-            => (samplesData.Min(), samplesData.Max());
 
     }
 }

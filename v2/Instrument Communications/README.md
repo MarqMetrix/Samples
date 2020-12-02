@@ -2,6 +2,7 @@
 Languages that we currently have samples for:
 
 - [C#](C%23)
+- [PowerShell](PowerShell)
 
 ### Development Emulator
 Our emulator is available as a single executable.
