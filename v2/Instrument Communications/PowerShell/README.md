@@ -52,3 +52,5 @@ To acquire a light & dark sample and automatically save them as a SPC file, use 
 ```PowerShell
 Invoke-AcquireSample -IntegrationTime [integration time in milliseconds] -LaserPower [laser power in milliwatts] -AutoDark -Wait -SPC "[filename]"
 ```
+
+![Acquire sample](Screenshots/AcquireSample.png)
