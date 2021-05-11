@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1a74d633-204d-25fe-05ad-853cc0119501",
+		"_postman_id": "31bbe4c1-46e4-4b78-8b11-93ef51b78133",
 		"name": "MqMx Instruments Web Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f62bfaa1-8a87-4f96-b4db-ebdf00375106",
 								"exec": [
 									"pm.environment.set(\"ShortCodeGenerationId\", pm.response.json().generationId);"
 								],
@@ -60,7 +59,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5161da8a-b729-4f87-86df-8e4884c8065b",
 								"exec": [
 									"pm.environment.set(\"PrimaryApiKey\", pm.response.json().key);",
 									"",
@@ -109,7 +107,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5161da8a-b729-4f87-86df-8e4884c8065b",
 								"type": "text/javascript",
 								"exec": [
 									"pm.environment.set(\"PrimaryApiKey\", pm.response.json().key);",
@@ -238,7 +235,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -248,7 +244,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
 								"type": "text/javascript",
 								"exec": [
 									"var collectionResult = pm.response.json();",
@@ -297,7 +292,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
 								"exec": [
 									""
 								],
@@ -307,7 +301,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
 								"exec": [
 									""
 								],
@@ -349,7 +342,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
 								"exec": [
 									""
 								],
@@ -359,7 +351,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
 								"exec": [
 									""
 								],
@@ -411,7 +402,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
 								"exec": [
 									""
 								],
@@ -421,7 +411,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
 								"exec": [
 									""
 								],
@@ -473,7 +462,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e9a9b284-eb2c-4d5d-bac9-2151e748bea5",
 								"exec": [
 									""
 								],
@@ -483,7 +471,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8f16a86c-857c-4f31-ac33-5f35f1d548b2",
 								"exec": [
 									""
 								],
@@ -609,7 +596,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5083c87b-3e33-4c5f-ba4c-6dd123e7384d",
 								"type": "text/javascript",
 								"exec": [
 									"var items = pm.response.json().items;",
@@ -660,7 +646,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "b7bac383-80c1-44a5-b55e-4c7bca79ef16",
 								"type": "text/javascript",
 								"exec": [
 									"var intensityCorrectionData = [];",
@@ -675,7 +660,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "adc60333-5c9b-4aca-b196-bf85f91f7523",
 								"type": "text/javascript",
 								"exec": [
 									"pm.environment.unset(\"IntensityCorrectionData\");",
@@ -767,7 +751,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4d8fff86-ab34-4b0b-b2ae-cfde2c374ad4",
 								"type": "text/javascript",
 								"exec": [
 									"pm.environment.unset(\"InstrumentCalibrationId\");"
@@ -820,7 +803,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5f707b7b-4d92-49d0-8e77-1e074a6c8ca3",
 								"exec": [
 									""
 								],
@@ -830,7 +812,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f65811a3-e4a5-472a-bbad-cba1f393ee47",
 								"exec": [
 									"var collectionResult = pm.response.json();",
 									"",
@@ -893,7 +874,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5f707b7b-4d92-49d0-8e77-1e074a6c8ca3",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -903,7 +883,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d7063468-be39-462f-b013-344148fb0a6d",
 								"type": "text/javascript",
 								"exec": [
 									"var collectionResult = pm.response.json();",
@@ -1055,7 +1034,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4bcc13b0-eb07-4d0d-8e3b-19529b8a0a02",
 								"exec": [
 									"pm.environment.set(\"SampleId\", pm.response.json().id);"
 								],
@@ -1106,7 +1084,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2bc3c524-1e80-4b0d-80df-0894a3d0a7a7",
 								"exec": [
 									"pm.environment.set(\"SampleId\", pm.response.json().id);"
 								],
@@ -1255,7 +1232,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5f707b7b-4d92-49d0-8e77-1e074a6c8ca3",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1265,7 +1241,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ace613f9-1436-4f9b-b396-355d35bb7a76",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1317,7 +1292,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2751b4af-8628-48d5-b217-7e72dd54a0d8",
 								"exec": [
 									"var collectionResult = pm.response.json();",
 									"",
@@ -1337,7 +1311,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "fd739133-cb9c-4a3e-b47a-8d63b4880a6d",
 								"exec": [
 									""
 								],
@@ -1378,7 +1351,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6eac5598-cd4d-497a-8c34-c5435ad996f1",
 								"exec": [
 									""
 								],
@@ -1388,7 +1360,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "6e15753c-9189-4e50-92b8-f68adf433091",
 								"exec": [
 									""
 								],
@@ -1443,7 +1414,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "32db8537-4352-4876-bbe4-ee120a72267d",
 								"exec": [
 									""
 								],
@@ -1453,7 +1423,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e71159c6-dad8-412e-832e-aadb54794657",
 								"exec": [
 									""
 								],
@@ -1495,7 +1464,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "56b30af9-1530-4c4d-9ccb-df490e2da314",
 								"exec": [
 									""
 								],
@@ -1505,7 +1473,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c93c0785-2f2d-420a-9fbc-23d5f96b5ec3",
 								"exec": [
 									""
 								],
@@ -1662,8 +1629,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Logging",
@@ -1683,14 +1649,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/Logs/GetConfiguration",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/GetConfiguration",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"Logs",
 								"GetConfiguration"
 							]
@@ -1719,7 +1685,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"logLevel\": \"Warning\"\n}",
+							"raw": "{\n\t\"logLevel\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1727,14 +1693,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/Logs/SetConfiguration",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/SetConfiguration",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"Logs",
 								"SetConfiguration"
 							]
@@ -1757,14 +1723,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/Logs?$orderBy=timestamp DESC",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs?$orderBy=timestamp DESC",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"Logs"
 							],
 							"query": [
@@ -1776,14 +1742,72 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "List Log Raw",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/Raw",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Logs",
+								"Raw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear Logs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/Clear",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Logs",
+								"Clear"
+							]
+						}
+					},
+					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "OData",
-			"item": [],
-			"protocolProfileBehavior": {}
+			"item": []
 		},
 		{
 			"name": "OData Api Metadata",
@@ -1791,7 +1815,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "953cacd1-d184-4fc7-80ed-750efce25a0b",
 						"exec": [
 							""
 						],
@@ -1801,7 +1824,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "9a931f19-2f3b-4613-a0b5-cf7beb244f5c",
 						"exec": [
 							""
 						],
@@ -1841,7 +1863,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a0024a4c-6092-46d5-94f8-4d403891687a",
 				"type": "text/javascript",
 				"exec": [
 					"",
@@ -1899,7 +1920,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "33b75b21-2ccc-4daf-94a5-7dfd7d3f237d",
 				"type": "text/javascript",
 				"exec": [
 					"pm.environment.unset(\"RequestDate\");",
