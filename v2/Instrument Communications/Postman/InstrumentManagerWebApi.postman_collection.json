@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "31bbe4c1-46e4-4b78-8b11-93ef51b78133",
+		"_postman_id": "74b5c3aa-74a1-47db-9cb8-8665ab27b4cc",
 		"name": "MqMx Instruments Web Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1296,11 +1296,11 @@
 									"var collectionResult = pm.response.json();",
 									"",
 									"pm.test(\"Has network location\", function() {",
-									"   return collectionResult.value.length >= 1; ",
+									"   return collectionResult.items.length >= 1; ",
 									"});",
 									"",
-									"if (collectionResult.value.length > 0) {",
-									"    var networkLocation = collectionResult.value[0];",
+									"if (collectionResult.items.length > 0) {",
+									"    var networkLocation = collectionResult.items[0];",
 									"    ",
 									"    pm.environment.set(\"NetworkLocationId\", networkLocation.id);",
 									"}"
@@ -1331,14 +1331,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"NetworkLocations"
 							]
 						}
@@ -1394,14 +1394,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"NetworkLocations"
 							]
 						}
@@ -1443,14 +1443,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/{{NetworkLocationId}}",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/{{NetworkLocationId}}",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"NetworkLocations",
 								"{{NetworkLocationId}}"
 							]
@@ -1493,14 +1493,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/{{NetworkLocationId}}/RefreshConnectivity",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/{{NetworkLocationId}}/RefreshConnectivity",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"NetworkLocations",
 								"{{NetworkLocationId}}",
 								"RefreshConnectivity"
@@ -1533,14 +1533,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/DefaultExportSettings",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/DefaultExportSettings",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"NetworkLocations",
 								"DefaultExportSettings"
 							]
@@ -1566,14 +1566,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/DeleteDefaultExportSettings",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/DeleteDefaultExportSettings",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"NetworkLocations",
 								"DeleteDefaultExportSettings"
 							]
@@ -1613,14 +1613,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/odata/NetworkLocations/SetDefaultExportSettings",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/SetDefaultExportSettings",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
 							],
 							"port": "{{PortNumber}}",
 							"path": [
-								"odata",
+								"api",
 								"NetworkLocations",
 								"SetDefaultExportSettings"
 							]
@@ -1685,7 +1685,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"logLevel\": 2\n}",
+							"raw": "{\n\t\"logLevel\": \"Warning\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1804,59 +1804,6 @@
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "OData",
-			"item": []
-		},
-		{
-			"name": "OData Api Metadata",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Date",
-						"value": "{{RequestDate}}"
-					},
-					{
-						"key": "Authorization",
-						"value": "SharedKey {{AuthenticationToken}}"
-					}
-				],
-				"url": {
-					"raw": "http://{{HostName}}:{{PortNumber}}/odata/$metadata",
-					"protocol": "http",
-					"host": [
-						"{{HostName}}"
-					],
-					"port": "{{PortNumber}}",
-					"path": [
-						"odata",
-						"$metadata"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"event": [
