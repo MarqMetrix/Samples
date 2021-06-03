@@ -337,6 +337,57 @@
 					"response": []
 				},
 				{
+					"name": "Get Installed Software",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instruments/{{InstrumentId}}/Software",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instruments",
+								"{{InstrumentId}}",
+								"Software"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Set Laser Enabled",
 					"event": [
 						{
