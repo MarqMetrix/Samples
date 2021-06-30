@@ -13,8 +13,8 @@ Our emulator is available as a single executable.
 
 **Versions:**
 
-- [2.0.0.20336 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.0.20336-09/win-x64/emulator.exe)
-- [2.0.0.20336 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.0.20336-09/win-x64/emulator.exe)
+- [2.0.1.24 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.1.24/win-x64/emulator.exe)
+- [2.0.1.24 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.1.24/win-x64/emulator.exe)
 
 
 **Instructions**
