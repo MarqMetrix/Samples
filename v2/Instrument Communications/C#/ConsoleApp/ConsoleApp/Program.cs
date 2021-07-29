@@ -27,6 +27,9 @@ namespace ConsoleApp
 
             Console.WriteLine("Retrieving instrument info");
             var instrument = (await client.GetInstrumentsAsync()).Items.FirstOrDefault();
+            
+            Console.WriteLine("Enabling laser");
+            await client.SetLaserEnabledAsync(instrument.Id);
 
             Console.WriteLine("Acquiring sample");
             var sampleInfo = await client.AcquireSampleAsync(instrument.Id, new ComputedSampleAcquisitionOptions
@@ -36,6 +39,9 @@ namespace ConsoleApp
                 LaserPower = 100,
                 SampleAverageCount = 1
             });
+
+            Console.WriteLine("Disabling laser");
+            await client.SetLaserEnabledAsync(instrument.Id, false);
 
             Console.WriteLine("Computing sample");
             var computedSample = await client.ComputeSampleAsync(instrument.Id, sampleInfo);

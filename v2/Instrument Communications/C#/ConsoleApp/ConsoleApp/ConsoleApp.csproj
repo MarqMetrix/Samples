@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MarqMetrix.InstrumentManagement.Client" Version="2.0.0-pre-20336-04" />
+    <PackageReference Include="MarqMetrix.InstrumentManagement.Client" Version="2.0.1-preview2" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
   </ItemGroup>
 

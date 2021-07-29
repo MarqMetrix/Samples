@@ -94,34 +94,6 @@ var sampleInfo = await client.AcquireSampleAsync(instrument.Id, new SampleAcquis
 
 `NetworkExportSettings` Settings for exporting to a network location on sample acquisition completion. 
 
-### Acquiring a sample for IM 1.x (BasicSampleAcquisitionOptions) 
-
-The next level of overloads for the AcquireSampleAsync method has the standard sample acquisition options for IM 1.x. When executing, it acquires the sample, and waits for them to finish executing before returning execution.
-
-```C#
-var sampleInfo = await client.AcquireSampleAsync(instrument.Id, new BasicSampleAcquisitionOptions
-{
-    IntegrationTime = TimeSpan.FromMilliseconds(100),
-    LaserPower = 100,
-    SampleAverageCount = 1
-});
-```
-
-#### BasicSampleAcquisitionOptions
-
-`IntegrationTime` The integration time for the spectrometer to use.
-
-`LaserPower` The laser power to use. Set this to 0 to collect a dark sample.
-
-`SampleAverageCount` The number of samples to acquire and average spectra from. 
-
-`Metadata` Additional metadata values.
-
-`FailureRetryCount` Number of attempts to retry in the event of a component failure. This only attempts to retry specific component communications, and does not retry the entire sample acquisition process.
-
-`NetworkExportSettings` Settings for exporting to a network location on sample acquisition completion. 
-
-
 ### Starting sample acquisition
 
 The lowest level of abstraction is the StartAcquiringSampleAsync method. If your application wants to monitor the completion of sample acquisitions, use this method. This is typically used when attempting to maximize performance of communications between IM and the client application.
