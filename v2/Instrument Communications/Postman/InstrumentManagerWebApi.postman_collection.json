@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "74b5c3aa-74a1-47db-9cb8-8665ab27b4cc",
+		"_postman_id": "86fa78f5-6821-447c-8759-0c512a4ae459",
 		"name": "MqMx Instruments Web Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1760,7 +1760,7 @@
 					"response": []
 				},
 				{
-					"name": "List Log",
+					"name": "Log Dump",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1774,7 +1774,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs?$orderBy=timestamp DESC",
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/Dump",
 							"protocol": "http",
 							"host": [
 								"{{HostName}}"
@@ -1782,13 +1782,8 @@
 							"port": "{{PortNumber}}",
 							"path": [
 								"api",
-								"Logs"
-							],
-							"query": [
-								{
-									"key": "$orderBy",
-									"value": "timestamp DESC"
-								}
+								"Logs",
+								"Dump"
 							]
 						}
 					},
