@@ -44,7 +44,7 @@ Shows the interlock status.  By clicking the check box it sets the interlock to 
 ### Set Sample
 By clicking the radio buttion it sets the active sample returned by the emulator.  
 ![Emulator Samples](EmulatorSetup/emulator-samples.jpg)
-*Note:* These only control light samples, dark samples are predefined.
+*Note:* These only control light samples, dark samples will all use the same value modified by an intensity factor calculated by the integration time.
 
 ---
 ### Exit
