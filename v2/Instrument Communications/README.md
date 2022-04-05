@@ -27,7 +27,7 @@ When the emulator first starts, it will be in a "Cooling" state for about 30 sec
 
 ![Emulator](EmulatorSetup/emulator.jpg)
 
-
+---
 ### Emulator Start Flags
 Running emulator defaults the API port to 8080 and allowing remote connections to `true` (allows connections that come from a non `127.0.0.1` address).
 
@@ -35,17 +35,18 @@ These can be changed:
 - `emulator.exe -httpPort 5000` Changes the API port to 5000.
 - `emulator.exe -allowRemoteAccess false` Disables access to the API from a client not running on the same machine.  
 
-
+---
 ### Set Interlocks
 Shows the interlock status.  By clicking the check box it sets the interlock to true or false.  
 ![Emulator Interlocks](EmulatorSetup/emulator-interlocks.jpg)
 
-
+---
 ### Set Sample
 By clicking the radio buttion it sets the active sample returned by the emulator.  
 ![Emulator Samples](EmulatorSetup/emulator-samples.jpg)
+*Note:* These only control light samples, dark samples are predefined.
 
-
+---
 ### Exit
 `ctrl+Q`
 
