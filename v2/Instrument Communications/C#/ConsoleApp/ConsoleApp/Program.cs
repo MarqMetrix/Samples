@@ -1,8 +1,7 @@
 ﻿using MarqMetrix.InstrumentManagement;
 using System;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
+using ConsoleApp.Examples;
 
 namespace ConsoleApp
 {
@@ -19,38 +18,16 @@ namespace ConsoleApp
 
             Console.Write("Short Code: ");
             var shortCode = Console.ReadLine();
-            var clientConnection = await shortCodeRequest.ConnectWithShortCodeAsync(shortCode);
-
+            var client = await shortCodeRequest.ConnectWithShortCodeAsync(shortCode);
             Console.WriteLine("Connected");
 
-            var client = clientConnection.CreateClient();
-
             Console.WriteLine("Retrieving instrument info");
-            var instrument = (await client.GetInstrumentsAsync()).Items.FirstOrDefault();
-            
-            Console.WriteLine("Enabling laser");
-            await client.SetLaserEnabledAsync(instrument.Id);
+            var instrument = await client.GetInstrumentDetailsAsync();
+            Console.WriteLine($"Instrument info retrieved for: {instrument.SerialNumber}");
 
-            Console.WriteLine("Acquiring sample");
-            var sampleInfo = await client.AcquireSampleAsync(instrument.Id, new ComputedSampleAcquisitionOptions
-            {
-                DarkSampleOptions = DarkSampleOptions.NewDark,
-                IntegrationTime = TimeSpan.FromMilliseconds(100),
-                LaserPower = 100,
-                SampleAverageCount = 1
-            });
-
-            Console.WriteLine("Disabling laser");
-            await client.SetLaserEnabledAsync(instrument.Id, false);
-
-            Console.WriteLine("Computing sample");
-            var computedSample = await client.ComputeSampleAsync(instrument.Id, sampleInfo);
-
-            Console.WriteLine("Writing sample to SPC file");
-            using var targetFile = File.Create("sample.spc");
-            SpcWriter.WriteSpcStreamData(targetFile, computedSample.Data, computedSample.RamanShiftData, DateTime.UtcNow, string.Empty);
-            
-            Console.WriteLine("Complete");
+            //await AutoDarkWithDarkSubtractToSpc.Run(client);
+            //await ManualDarkWithDarkSubtractToSpc.Run(client);
+            await WebsocketEvents.Run(client);
         }
     }
 }
