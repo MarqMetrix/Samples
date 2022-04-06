@@ -11,10 +11,10 @@ Once Postman is downloaded and installed, grab the Postman collection and enviro
 
 ### Import API Collection
 1. To import the collection into Postman, select Import in upper left.
-![Postman Import](Images\postman-import.png)
+![Postman Import](Images/postman-import.png)
 1. Select upload files or drag and drop the `InstrumentManagerWebApi.postman_collection.json` file into the Import section.
 1. Select the file(s) to import.
-![Postman File Import](Images\postman-file-import.png)
+![Postman File Import](Images/postman-file-import.png)
 1. Select **Import** to bring the collection into Postman.
 1. Repeat the above steps with `MarqMetrixDevice.postman_environment.json` to import the Device Environment next.
 
@@ -22,13 +22,13 @@ Once Postman is downloaded and installed, grab the Postman collection and enviro
 
 ## Connect to IM
 1. With the Postman collection and environment imported, navigate to the `MarqMetrix Device` environment and update the HostName and PortNumber values to match your device. The default PortNumber for a physical device is `80` and `8080` for the emulator.
-![Postman Environment](Images\postman-env-tab.png)
+![Postman Environment](Images/postman-env-tab.png)
 1. From the Collections tab, go to the `Connectiviy` folder and select `Generate Shortcode`.
 1. Hit send to get a Shortcode, this will be displayed on the front display of the device or emulator.
-![Postman Shortcode](Images\postman-shortcode.png)
+![Postman Shortcode](Images/postman-shortcode.png)
 1. In Postman, now go to `Connectivity` -> `Get Primary Api Key from Shortcode`.
 1. Input the Shortcode into the body of the request and hit send.  This will save the API key into the Postman environment.
-![Postman API Key](Images\postman-api-key.png)
+![Postman API Key](Images/postman-api-key.png)
 1. From here all other endpoints can be used in the collection like `Get Instrument`.
 
 ### Postman Tips
