@@ -2,6 +2,7 @@
 Languages that we currently have samples for:
 
 - [C#](C%23)
+- [Postman](Postman)
 
 ## Development Emulator
 Our emulator is available as a single executable.
@@ -29,7 +30,7 @@ When the emulator first starts, it will be in a "Cooling" state for about 30 sec
 
 ---
 ### Emulator Start Flags
-Running emulator defaults the API port to 8080 and allowing remote connections to `true` (allows connections that come from a non `127.0.0.1` address).
+Running emulator defaults the API port to 8080 and allowing remote connections to `true` (allows connections that come from a non `127.0.0.1` address).  These can be changed when starting the emulator via the command line.
 
 These can be changed:
 - `emulator.exe -httpPort 5000` Changes the API port to 5000.
