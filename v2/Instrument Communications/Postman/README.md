@@ -32,5 +32,5 @@ Once Postman is downloaded and installed, grab the Postman collection and enviro
 1. From here all other endpoints can be used in the collection like `Get Instrument`.
 
 ### Postman Tips
-- After connecting to a device or emulator with the above shortcode method, the API key is saved.  However, if connecting to a new device or emulator is needed you must go through the shortcode process each time another device is connected to.
+- You must go through the shortcode process each time you connect to another device or emulator to acquire/reacquire the API key for that device.
 - In Postman, items with `{{}}` are variables saved and retrieved from the environment tab.  These can be hand edited, but some endpoints like `Acquire Sample` will set the `{{SampleId}}` variable automatically on a successful call.
