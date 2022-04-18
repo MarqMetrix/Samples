@@ -97,7 +97,7 @@ var sampleDetails = await client.StartAcquiringSampleAsync(new SampleAcquisition
 });
 ```
 
-### Computing the sample (Dark Subtrct)
+### Computing the sample (Dark Subtract)
 
 To Dark Subtract the sample, two sample's data are needed.
 ```C#
