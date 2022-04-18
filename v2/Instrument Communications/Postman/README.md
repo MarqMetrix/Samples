@@ -34,3 +34,14 @@ Once Postman is downloaded and installed, grab the Postman collection and enviro
 ### Postman Tips
 - You must go through the shortcode process each time you connect to another device or emulator to acquire/reacquire the API key for that device.
 - In Postman, items with `{{}}` are variables saved and retrieved from the environment tab.  These can be hand edited, but some endpoints like `Acquire Sample` will set the `{{SampleId}}` variable automatically on a successful call.
+
+### Sample Data Serialization
+Sample Data is returned in a `buffer` that is a Base64 encoded array. The `dataType` field is used to determine the array's type.
+![Postman Sample Data](Images/postman-sample-data.png)
+A C# example below shows how to convert the Base64 buffer to a double array.
+```C#
+var buffer = Convert.FromBase64String(sample.Data.Buffer);
+var dataSize = buffer.Length / Marshal.SizeOf<double>();
+var sampleData = new double[dataSize];
+Buffer.BlockCopy(buffer, 0, sampleData, 0, buffer.Length);
+```
