@@ -17,12 +17,12 @@ namespace ConsoleApp.Examples
 
             try
             {
-                client.SampleAcquisitionStatusChanged.Select(x => x).Subscribe(changed =>
+                client.SampleAcquisitionStatusChanged.Subscribe(changed =>
                 {
                     Console.WriteLine($"SAMPLE STATUS CHANGED: ID - {changed.SampleDetails.Id} | NEW STATUS - {changed.SampleDetails.Status.ToString()}");
                 });
                 
-                client.SampleDataAcquired.Select(x => x).Subscribe(sample =>
+                client.SampleDataAcquired.Subscribe(sample =>
                 {
                     Console.WriteLine($"SAMPLE DATA RECEIVED: ID - {sample.SampleId} | ARRAY LENGTH - {sample.SampleData.Data.Length}");
                 });

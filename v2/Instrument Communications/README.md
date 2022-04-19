@@ -12,8 +12,8 @@ Our emulator is available as a single executable.
 - Windows 10 or later (x64/x86)
 
 **Versions:**
-- [2.0.5.0 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.5.0/win-x64/emulator.exe)
-- [2.0.5.0 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.5.0/win-x64/emulator.exe)
+- [2.0.5.0 Windows 64-bit](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.6.0/win-x64/emulator.exe)
+- [2.0.5.0 Windows 32-bit (x86)](https://marqmetrixresources01.blob.core.windows.net/software/Emulator/2.0.6.0/win-x64/emulator.exe)
 
 ---
 
