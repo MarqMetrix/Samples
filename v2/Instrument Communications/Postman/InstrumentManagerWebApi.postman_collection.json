@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "cca8e834-7203-44d1-a182-6284b59176a6",
+		"_postman_id": "3245d880-ed77-4f94-b563-877faeba1cc5",
 		"name": "MqMx Instruments Web Api",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14821776"
 	},
 	"item": [
 		{
@@ -544,6 +545,44 @@
 					"response": []
 				},
 				{
+					"name": "Start Push Continuous Acquisition",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"integrationTime\": \"00:00:00.100\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"autoDark\": true,\n\t\"delay\": \"00:00:00.000\",\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"For Postman\"\n\t},\n    \"pushSettings\": {\n        \"outputAxisAlignment\": \"RamanShift\",\n        \"outputProcessingType\": \"DarkSubtraction\",\n        \"outputFileFormat\": \"SPC\",\n        \"pushType\": \"File\",\n        \"directoryName\": \"C:\\\\Samples\",\n        \"filenameScheme\": \"{ExperimentName}{FileExtension}\",\n        \"skipDarkSamples\": true,\n        \"faultOnFailure\": true\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/StartContinuousAcquisition",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instrument",
+								"StartContinuousAcquisition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Stop Continuous Acquisition",
 					"request": {
 						"method": "GET",
@@ -1051,6 +1090,55 @@
 					"response": []
 				},
 				{
+					"name": "Acquire and Push Sample",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"SampleId\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Date",
+								"value": "{{RequestDate}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "SharedKey {{AuthenticationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"integrationTime\": \"00:00:00.1000\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"My Run\",\n\t\t\"SampleName\": \"Water\",\n\t\t\"MetadataItem\": \"TestForPostman\"\n\t},\n    \"pushSettings\": {\n        \"outputAxisAlignment\": \"RamanShift\",\n        \"outputProcessingType\": \"Raw\",\n        \"outputFileFormat\": \"SPC\",\n        \"pushType\": \"File\",\n        \"directoryName\": \"C:\\\\Samples\",\n        \"filenameScheme\": \"{ExperimentName}{FileExtension}\",\n        \"skipDarkSamples\": true,\n        \"faultOnFailure\": false\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/AcquireSample",
+							"protocol": "http",
+							"host": [
+								"{{HostName}}"
+							],
+							"port": "{{PortNumber}}",
+							"path": [
+								"api",
+								"Instrument",
+								"AcquireSample"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Acquire Samples",
 					"event": [
 						{
@@ -1245,354 +1333,6 @@
 								"Samples"
 							]
 						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Networking",
-			"item": [
-				{
-					"name": "List Network Locations",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var collectionResult = pm.response.json();",
-									"",
-									"pm.test(\"Has network location\", function() {",
-									"   return collectionResult.items.length >= 1; ",
-									"});",
-									"",
-									"if (collectionResult.items.length > 0) {",
-									"    var networkLocation = collectionResult.items[0];",
-									"    ",
-									"    pm.environment.set(\"NetworkLocationId\", networkLocation.id);",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}"
-							}
-						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"NetworkLocations"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add Network Location",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"path\": \"\\\\\\\\192.168.50.105\\\\TestShare\",\r\n  \"credentials\": {\r\n    \"username\": \"TestUser\",\r\n    \"password\": \"password\"\r\n  }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"NetworkLocations"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Network Location",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}"
-							}
-						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/{{NetworkLocationId}}",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"NetworkLocations",
-								"{{NetworkLocationId}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Refresh Network Location Connectivity",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}"
-							}
-						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/{{NetworkLocationId}}/RefreshConnectivity",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"NetworkLocations",
-								"{{NetworkLocationId}}",
-								"RefreshConnectivity"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Default Network Export Settings",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/DefaultExportSettings",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"NetworkLocations",
-								"DefaultExportSettings"
-							]
-						},
-						"description": "List all Netshares"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Default Network Export Settings",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/DeleteDefaultExportSettings",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"NetworkLocations",
-								"DeleteDefaultExportSettings"
-							]
-						},
-						"description": "List all Netshares"
-					},
-					"response": []
-				},
-				{
-					"name": "Set Default Network Export Settings",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"outputAxisAlignment\": \"RamanShift\",\r\n    \"outputProcessingType\": \"Raw\",\r\n    \"outputFileFormat\": \"SPC\",\r\n    \"filenameScheme\": \"{MachineName}\\\\\\r\\n{ExperimentName}\\\\\\r\\n{SampleId}{FileExtension}\",\r\n    \"networkLocationId\": \"b56cfd37-5e68-447d-80b4-94b2ab361369\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/NetworkLocations/SetDefaultExportSettings",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"NetworkLocations",
-								"SetDefaultExportSettings"
-							]
-						},
-						"description": "List all Netshares"
 					},
 					"response": []
 				}
