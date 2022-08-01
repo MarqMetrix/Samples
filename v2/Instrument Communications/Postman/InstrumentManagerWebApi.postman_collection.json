@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3245d880-ed77-4f94-b563-877faeba1cc5",
+		"_postman_id": "da11b7e9-55cf-47db-8552-364ef8c0cfc0",
 		"name": "MqMx Instruments Web Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14821776"
@@ -1410,96 +1410,6 @@
 								"api",
 								"Logs",
 								"SetConfiguration"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Log Dump",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}"
-							}
-						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/Dump",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Logs",
-								"Dump"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "List Log Raw",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}"
-							}
-						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/Raw",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Logs",
-								"Raw"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Clear Logs",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Date",
-								"value": "{{RequestDate}}"
-							},
-							{
-								"key": "Authorization",
-								"value": "SharedKey {{AuthenticationToken}}"
-							}
-						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/Clear",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Logs",
-								"Clear"
 							]
 						}
 					},
