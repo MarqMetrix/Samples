@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MarqMetrix.InstrumentManagement.Client" Version="2.0.5-preview1" />
+    <PackageReference Include="MarqMetrix.InstrumentManagement.Client" Version="2.2.0-preview7" />
   </ItemGroup>
 
 </Project>
