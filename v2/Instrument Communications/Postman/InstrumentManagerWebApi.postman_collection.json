@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "da11b7e9-55cf-47db-8552-364ef8c0cfc0",
+		"_postman_id": "fb8247f0-6d95-4905-b770-6d5203acdff3",
 		"name": "MqMx Instruments Web Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "14821776"
+		"_exporter_id": "22096403"
 	},
 	"item": [
 		{
@@ -714,7 +714,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"createdBy\": \"Test Environment\",\n\t\"instrumentCalibration\": {\n\t\t\"laserWavelength\": 785.1547,\n\t\t\"arguments\": [7.874371e+02, 1.414304e-01, 1.095978e-05, -1.067649e-08, 1.853184e-12, -2.023975e-16],\n\t\t\"intensityCorrection\": {{IntensityCorrectionData}}\n\t}\n}"
+							"raw": "{\n\t\"createdBy\": \"Test Environment\",\n\t\"instrumentCalibration\": {\n\t\t\"laserWavelength\": 785.1547,\n\t\t\"arguments\": [7.874371e+02, 1.414304e-01, 1.095978e-05, -1.067649e-08, 1.853184e-12, -2.023975e-16],\n\t\t\"intensityCorrection\": {{IntensityCorrectionData}},\n        \"schemaVersion\": \"4.0\",\n        \"timestamp\": \"2022-09-07T18:21:25.2055\",\n        \"spectrometerSerialNumber\": \"00000\",\n        \"unitSerialNumber\": \"########\"\n\t}\n}"
 						},
 						"url": {
 							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration/Data",
