@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "fb8247f0-6d95-4905-b770-6d5203acdff3",
 		"name": "MqMx Instruments Web Api",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "22096403"
 	},
 	"item": [
@@ -38,19 +38,7 @@
 								"disabled": true
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/GenerateShortCode",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Security",
-								"GenerateShortCode"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Security/GenerateShortCode"
 					},
 					"response": []
 				},
@@ -86,19 +74,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Security",
-								"AccessKey"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey"
 					},
 					"response": []
 				},
@@ -129,19 +105,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"type\": \"Secondary\",\n\t\"generationId\": \"{{ShortCodeGenerationId}}\",\n\t\"shortCode\": \"467051395\"\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Security",
-								"AccessKey"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey"
 					},
 					"response": []
 				},
@@ -169,19 +133,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"type\": \"Primary\"\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Security",
-								"AccessKey"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey"
 					},
 					"response": []
 				},
@@ -209,19 +161,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"type\": \"Secondary\"\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Security",
-								"AccessKey"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Security/AccessKey"
 					},
 					"response": []
 				}
@@ -246,7 +186,8 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									""
+									"pm.environment.set(\"SpectrometerSerialNumber\", pm.response.json().spectrometerSerialNumber);\r",
+									"pm.environment.set(\"UnitSerialNumber\", pm.response.json().serialNumber);"
 								],
 								"type": "text/javascript"
 							}
@@ -264,18 +205,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument"
 					},
 					"response": []
 				},
@@ -313,19 +243,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Software",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Software"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Software"
 					},
 					"response": []
 				},
@@ -373,18 +291,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"isLaserEnabled\": true\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument"
 					},
 					"response": []
 				},
@@ -432,18 +339,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"displayName\": \"Test01\"\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument"
 					},
 					"response": []
 				},
@@ -491,18 +387,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"isLaserEnabled\": false\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument"
 					},
 					"response": []
 				},
@@ -528,19 +413,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"integrationTime\": \"00:00:00.100\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"autoDark\": false,\n\t\"delay\": \"00:00:00.000\",\n\t\"metadata\": {\n\t\t\"test\": \"For Postman\"\n\t}\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/StartContinuousAcquisition",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"StartContinuousAcquisition"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/StartContinuousAcquisition"
 					},
 					"response": []
 				},
@@ -566,19 +439,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"integrationTime\": \"00:00:00.100\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"autoDark\": true,\n\t\"delay\": \"00:00:00.000\",\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"For Postman\"\n\t},\n    \"pushSettings\": {\n        \"outputAxisAlignment\": \"RamanShift\",\n        \"outputProcessingType\": \"DarkSubtraction\",\n        \"outputFileFormat\": \"SPC\",\n        \"pushType\": \"File\",\n        \"directoryName\": \"C:\\\\Samples\",\n        \"filenameScheme\": \"{ExperimentName}{FileExtension}\",\n        \"skipDarkSamples\": true,\n        \"faultOnFailure\": true\n    }\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/StartContinuousAcquisition",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"StartContinuousAcquisition"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/StartContinuousAcquisition"
 					},
 					"response": []
 				},
@@ -600,19 +461,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/StopContinuousAcquisition",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"StopContinuousAcquisition"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/StopContinuousAcquisition"
 					},
 					"response": []
 				},
@@ -649,19 +498,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Calibration"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration"
 					},
 					"response": []
 				},
@@ -714,22 +551,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"createdBy\": \"Test Environment\",\n\t\"instrumentCalibration\": {\n\t\t\"laserWavelength\": 785.1547,\n\t\t\"arguments\": [7.874371e+02, 1.414304e-01, 1.095978e-05, -1.067649e-08, 1.853184e-12, -2.023975e-16],\n\t\t\"intensityCorrection\": {{IntensityCorrectionData}},\n        \"schemaVersion\": \"4.0\",\n        \"timestamp\": \"2022-09-07T18:21:25.2055\",\n        \"spectrometerSerialNumber\": \"00000\",\n        \"unitSerialNumber\": \"########\"\n\t}\n}"
+							"raw": "{\n\t\"createdBy\": \"Test Environment\",\n\t\"instrumentCalibration\": {\n\t\t\"laserWavelength\": 785.1547,\n\t\t\"arguments\": [7.874371e+02, 1.414304e-01, 1.095978e-05, -1.067649e-08, 1.853184e-12, -2.023975e-16],\n\t\t\"intensityCorrection\": {{IntensityCorrectionData}},\n        \"schemaVersion\": \"4.0\",\n        \"timestamp\": \"{{$isoTimestamp}}\",\n        \"spectrometerSerialNumber\": \"{{SpectrometerSerialNumber}}\",\n        \"unitSerialNumber\": \"{{UnitSerialNumber}}\"\n\t}\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration/Data",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Calibration",
-								"Data"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration/Data"
 					},
 					"response": []
 				},
@@ -751,20 +575,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration/{{InstrumentCalibrationId}}",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Calibration",
-								"{{InstrumentCalibrationId}}"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration/{{InstrumentCalibrationId}}"
 					},
 					"response": []
 				},
@@ -797,20 +608,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration/{{InstrumentCalibrationId}}",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Calibration",
-								"{{InstrumentCalibrationId}}"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Calibration/{{InstrumentCalibrationId}}"
 					},
 					"response": []
 				}
@@ -867,19 +665,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Samples"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples"
 					},
 					"response": []
 				},
@@ -981,19 +767,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Samples"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples"
 					},
 					"response": []
 				},
@@ -1024,19 +798,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Samples"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples"
 					},
 					"response": []
 				},
@@ -1073,19 +835,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"integrationTime\": \"00:00:00.1000\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"My Run\",\n\t\t\"SampleName\": \"Water\",\n\t\t\"MetadataItem\": \"TestForPostman\"\n\t}\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/AcquireSample",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"AcquireSample"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/AcquireSample"
 					},
 					"response": []
 				},
@@ -1122,19 +872,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"integrationTime\": \"00:00:00.1000\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"My Run\",\n\t\t\"SampleName\": \"Water\",\n\t\t\"MetadataItem\": \"TestForPostman\"\n\t},\n    \"pushSettings\": {\n        \"outputAxisAlignment\": \"RamanShift\",\n        \"outputProcessingType\": \"Raw\",\n        \"outputFileFormat\": \"SPC\",\n        \"pushType\": \"File\",\n        \"directoryName\": \"C:\\\\Samples\",\n        \"filenameScheme\": \"{ExperimentName}{FileExtension}\",\n        \"skipDarkSamples\": true,\n        \"faultOnFailure\": false\n    }\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/AcquireSample",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"AcquireSample"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/AcquireSample"
 					},
 					"response": []
 				},
@@ -1171,19 +909,7 @@
 							"mode": "raw",
 							"raw": "{\n\t\"items\": [\n\t\t{\n\t\t\t\"integrationTime\": \"00:00:00.1000\",\n\t\t\t\"sampleAverageCount\": 1,\n\t\t\t\"laserPower\": 300,\n\t\t\t\"failureRetryCount\": 4,\n\t\t\t\"metadata\": {\n\t\t\t\t\"ExperimentName\": \"My Run\",\n\t\t\t\t\"SampleName\": \"Water\",\n\t\t\t\t\"MetadataItem\": \"TestForPostman\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"integrationTime\": \"00:00:00.1000\",\n\t\t\t\"sampleAverageCount\": 1,\n\t\t\t\"laserPower\": 400,\n\t\t\t\"failureRetryCount\": 4,\n\t\t\t\"metadata\": {\n\t\t\t\t\"ExperimentName\": \"My Run\",\n\t\t\t\t\"SampleName\": \"Water\",\n\t\t\t\t\"MetadataItem\": \"TestForPostman\"\n\t\t\t}\n\t\t}\n\t]\n}"
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/AcquireSamples",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"AcquireSamples"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/AcquireSamples"
 					},
 					"response": []
 				},
@@ -1201,20 +927,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples/{{SampleId}}",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Samples",
-								"{{SampleId}}"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples/{{SampleId}}"
 					},
 					"response": []
 				},
@@ -1232,21 +945,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples/{{SampleId}}/Cancel",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Samples",
-								"{{SampleId}}",
-								"Cancel"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples/{{SampleId}}/Cancel"
 					},
 					"response": []
 				},
@@ -1264,21 +963,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples/{{SampleId}}/Data",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Samples",
-								"{{SampleId}}",
-								"Data"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples/{{SampleId}}/Data"
 					},
 					"response": []
 				},
@@ -1320,19 +1005,7 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Instrument",
-								"Samples"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Instrument/Samples"
 					},
 					"response": []
 				}
@@ -1355,19 +1028,7 @@
 								"value": "SharedKey {{AuthenticationToken}}"
 							}
 						],
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/GetConfiguration",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Logs",
-								"GetConfiguration"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Logs/GetConfiguration"
 					},
 					"response": []
 				},
@@ -1399,19 +1060,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://{{HostName}}:{{PortNumber}}/api/Logs/SetConfiguration",
-							"protocol": "http",
-							"host": [
-								"{{HostName}}"
-							],
-							"port": "{{PortNumber}}",
-							"path": [
-								"api",
-								"Logs",
-								"SetConfiguration"
-							]
-						}
+						"url": "http://{{HostName}}:{{PortNumber}}/api/Logs/SetConfiguration"
 					},
 					"response": []
 				}
