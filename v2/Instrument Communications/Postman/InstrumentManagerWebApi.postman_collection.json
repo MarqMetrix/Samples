@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "8836a2dd-9ec4-4a8c-9dca-73c6044d7a1a",
+		"_postman_id": "58390d87-98bc-43d5-8481-3de831a4f052",
 		"name": "MqMx Instruments Web Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "22096403"
+		"_exporter_id": "14821776"
 	},
 	"item": [
 		{
@@ -565,7 +565,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"integrationTime\": \"00:00:00.100\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"autoDark\": true,\n\t\"delay\": \"00:00:00.000\",\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"For Postman\"\n\t},\n    \"pushSettings\": {\n        \"outputAxisAlignment\": \"RamanShift\",\n        \"outputProcessingType\": \"DarkSubtraction\",\n        \"outputFileFormat\": \"SPC\",\n        \"pushType\": \"File\",\n        \"directoryName\": \"C:\\\\Samples\",\n        \"filenameScheme\": \"{ExperimentName}{FileExtension}\",\n        \"skipDarkSamples\": true,\n        \"faultOnFailure\": true\n    }\n}"
+							"raw": "{\n\t\"integrationTime\": \"00:00:00.100\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"autoDark\": true,\n\t\"delay\": \"00:00:00.000\",\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"For Postman\"\n\t},\n    \"pushSettings\": {\n        \"outputAxisAlignment\": \"RamanShift\",\n        \"outputProcessingType\": \"DarkSubtraction\",\n        \"outputFileFormat\": \"SPC\",\n        \"pushType\": \"File\",\n        \"directoryName\": \"C:\\\\Samples\",\n        \"filenameScheme\": \"{ExperimentName}{FileExtension}\",\n        \"skipDarkSamples\": true,\n        \"faultOnFailure\": true,\n        \"standardizedXAxis\": false\n    }\n}"
 						},
 						"url": {
 							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/StartContinuousAcquisition",
@@ -1121,7 +1121,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"integrationTime\": \"00:00:00.1000\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"My Run\",\n\t\t\"SampleName\": \"Water\",\n\t\t\"MetadataItem\": \"TestForPostman\"\n\t},\n    \"pushSettings\": {\n        \"outputAxisAlignment\": \"RamanShift\",\n        \"outputProcessingType\": \"Raw\",\n        \"outputFileFormat\": \"SPC\",\n        \"pushType\": \"File\",\n        \"directoryName\": \"C:\\\\Samples\",\n        \"filenameScheme\": \"{ExperimentName}{FileExtension}\",\n        \"skipDarkSamples\": true,\n        \"faultOnFailure\": false\n    }\n}"
+							"raw": "{\n\t\"integrationTime\": \"00:00:00.1000\",\n\t\"sampleAverageCount\": 1,\n\t\"laserPower\": 300,\n\t\"metadata\": {\n\t\t\"ExperimentName\": \"My Run\",\n\t\t\"SampleName\": \"Water\",\n\t\t\"MetadataItem\": \"TestForPostman\"\n\t},\n    \"pushSettings\": {\n        \"outputAxisAlignment\": \"RamanShift\",\n        \"outputProcessingType\": \"Raw\",\n        \"outputFileFormat\": \"SPC\",\n        \"pushType\": \"File\",\n        \"directoryName\": \"C:\\\\Samples\",\n        \"filenameScheme\": \"{ExperimentName}{FileExtension}\",\n        \"skipDarkSamples\": true,\n        \"faultOnFailure\": false,\n        \"standardizedXAxis\": false\n    }\n}"
 						},
 						"url": {
 							"raw": "http://{{HostName}}:{{PortNumber}}/api/Instrument/AcquireSample",
