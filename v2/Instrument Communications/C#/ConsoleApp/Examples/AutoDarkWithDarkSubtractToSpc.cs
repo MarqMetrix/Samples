@@ -32,14 +32,15 @@ namespace ConsoleApp.Examples
             Console.WriteLine("Getting X Axis");
             var calibration = await client.GetCurrentCalibrationAsync();
             
-            Console.WriteLine("Getting sample data");
+            Console.WriteLine("Dark subtracting sample");
             var sampleData = await client.GetSampleDataAsync(sampleDetails.Id);
             //Example on how to get the dark sample data from the sample metadata
             var darkSampleData = await client.GetSampleDataAsync((string)sampleData.Metadata["DarkSampleId"]);
-
+            var darkSubtractedSampleData = sampleData.SubtractDark(darkSampleData);
+            
             Console.WriteLine("Writing sample to SPC file");
             using var targetFile = File.Create("AutoDarkWithDarkSubtractToSpc.spc");
-            sampleData.WriteSpcStreamData(sampleData, calibration, OutputAxisAlignment.RamanShift, targetFile);
+            sampleData.WriteSpcStreamData(darkSubtractedSampleData.SampleData, calibration, OutputAxisAlignment.RamanShift, targetFile);
             
             Console.WriteLine("Complete");
         }
