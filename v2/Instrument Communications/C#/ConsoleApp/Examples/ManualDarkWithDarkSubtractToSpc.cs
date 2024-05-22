@@ -46,11 +46,10 @@ namespace ConsoleApp.Examples
             Console.WriteLine("Dark subtracting sample");
             var sampleData = await client.GetSampleDataAsync(sampleDetails.Id);
             var darkSampleData = await client.GetSampleDataAsync(darkSampleDetails.Id);
-            var darkSubtractedSampleData = sampleData.SubtractDark(darkSampleData);
 
             Console.WriteLine("Writing sample to SPC file");
             using var targetFile = File.Create("ManualDarkWithDarkSubtractToSpc.spc");
-            sampleData.WriteSpcStreamData(darkSubtractedSampleData.SampleData, calibration, OutputAxisAlignment.RamanShift, targetFile);
+            sampleData.WriteSpcStreamData(darkSampleData, calibration, OutputAxisAlignment.RamanShift, targetFile);
             
             Console.WriteLine("Complete");
         }

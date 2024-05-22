@@ -46,7 +46,6 @@ namespace ConsoleApp.Examples
             Console.WriteLine("Dark subtracting sample");
             var sampleData = await client.GetSampleDataAsync(sampleDetails.Id);
             var darkSampleData = await client.GetSampleDataAsync(darkSampleDetails.Id);
-            var darkSubtractedSampleData = sampleData.SubtractDark(darkSampleData);
 
             Console.WriteLine("Writing sample to SPC file");
             using var targetFile = File.Create("ManualDarkWithDarkSubtractToText.txt");
