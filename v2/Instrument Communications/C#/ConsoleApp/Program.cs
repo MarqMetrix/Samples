@@ -25,9 +25,11 @@ namespace ConsoleApp
             var instrument = await client.GetInstrumentDetailsAsync();
             Console.WriteLine($"Instrument info retrieved for: {instrument.SerialNumber}");
 
-            await AutoDarkWithDarkSubtractToSpc.Run(client);
+            //await AutoDarkWithDarkSubtractToSpc.Run(client);
             //await ManualDarkWithDarkSubtractToSpc.Run(client);
             //await WebsocketEvents.Run(client);
+            //await NewDarkWithDarkSubtractPushSettings.Run(client);
+            await ManualDarkWithDarkSubtractToText.Run(client);
         }
     }
 }

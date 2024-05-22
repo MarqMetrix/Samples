@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MarqMetrix.InstrumentManagement.Client" Version="2.2.0-preview7" />
+    <PackageReference Include="MarqMetrix.InstrumentManagement.Client" Version="2.6.0" />
   </ItemGroup>
 
 </Project>
